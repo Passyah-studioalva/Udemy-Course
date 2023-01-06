@@ -49,6 +49,6 @@ export default function play23() {
   ];
 
   logger.log(persons, (person) => {
-    console.log(person);
+    // console.log(person);
   });
 }
