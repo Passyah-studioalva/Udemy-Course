@@ -40,8 +40,8 @@ export default function play25() {
 
   /* Example 2 */
   function logStudenInfo(info: StudenInfo<Car>) {
-    console.log(info);
-    console.log(info);
+    // console.log(info);
+    // console.log(info);
   }
 
   logStudenInfo(info.data.name);

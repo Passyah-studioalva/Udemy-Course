@@ -23,7 +23,10 @@ import { useEffect } from "react";
 // import play22 from "../playground-22";
 // import play23 from "../playground-23";
 // import play24 from "../playground-24";
-import play25 from "../playground-25";
+// import play25 from "../playground-25";
+import play26 from "../playground-26";
+import play27 from "../playground-27";
+import play28 from "../playground-28";
 
 export default function Home() {
   let a: AddEventListenerOptions;
@@ -61,7 +64,10 @@ export default function Home() {
     // play22();
     // play23();
     // play24();
-    play25();
+    // play25();
+    // play26();
+    // play27();
+    play28();
   }, []);
 
   return <div>{person.name}</div>;
