@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import play30 from "../playground-30";
 // import play1 from "../playground-1";
 // import play2 from "../playground-2";
 // import play3 from "../playground-3";
@@ -29,6 +28,10 @@ import play30 from "../playground-30";
 // import play27 from "../playground-27";
 // import play28 from "../playground-28";
 // import play29 from "../playground-29";
+// import play30 from "../playground-30";
+// import play31 from "../playground-31";
+// import play32 from "../playground-32";
+import play33 from "../playground-33";
 
 export default function Home() {
   let a: AddEventListenerOptions;
@@ -71,7 +74,10 @@ export default function Home() {
     // play27();
     // play28();
     // play29();
-    play30();
+    // play30();
+    // play31();
+    // play32();
+    play33();
   }, []);
 
   return <div>{person.name}</div>;
