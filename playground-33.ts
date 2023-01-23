@@ -30,8 +30,8 @@ export default async function play33() {
 
   /* Exanoke 2 */
   function sayHello(props: InferHelloProps<typeof getHelloProps>) {
-    console.log(props.data.cars);
-    console.log(props.greeting);
+    // console.log(props.data.cars);
+    // console.log(props.greeting);
   }
   const data = await getHelloProps();
   sayHello(data.props);
