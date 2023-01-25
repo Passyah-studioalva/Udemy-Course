@@ -1,6 +1,7 @@
 /* Example 2 */
 import getAllProductsQuery from "../utils/queries/get-all-products";
 import fetchApi from "../utils/fetch-api";
+import { ProductConnection } from "../schema";
 
 // type FetchParams = {
 //   query: string;
@@ -40,15 +41,31 @@ import fetchApi from "../utils/fetch-api";
 //   //   return data;
 // };
 
-const getAllProducts = async (): Promise<any[]> => {
-  /* Example 1 */
-  // const products = await fetchApi();
-  /* Example 2 */
-  const products = await fetchApi({ query: getAllProductsQuery });
-  // Example 1 Recomendeed
-  return products.data;
-  // Example 2
-  //   return products;
+type ReturnType = {
+  products: ProductConnection;
+};
+
+/* Example 1 */
+// const getAllProducts = async (): Promise<any[]> => {
+//   /* Example 1 */
+//   // const products = await fetchApi();
+//   /* Example 2 */
+//   const products = await fetchApi<{product: ProductConnection}>({ query: getAllProductsQuery });
+//   // Example 1 Recomendeed
+//   return products.data;
+//   // Example 2
+//   //   return products;
+// };
+
+/* Example 2 */
+const getAllProducts = async (): Promise<any> => {
+  const { data } = await fetchApi<ReturnType>({
+    query: getAllProductsQuery,
+  });
+
+  //* Normalize and return new data!
+
+  return data.products;
 };
 
 export default getAllProducts;
