@@ -1,8 +1,8 @@
-import { Product } from "./../schema.d";
 /* Example 2 */
 import getAllProductsQuery from "../utils/queries/get-all-products";
 import fetchApi from "../utils/fetch-api";
 import { ProductConnection } from "../schema";
+import { normalizeProduct } from "../utils/normalize";
 
 // type FetchParams = {
 //   query: string;
@@ -76,9 +76,8 @@ const getAllProducts = async (): Promise<any> => {
   });
 
   const products =
-    data.products.edges.map(({ node: product }) => {
-      return product;
-    }) ?? [];
+    data.products.edges.map(({ node: product }) => normalizeProduct(product)) ??
+    [];
 
   return products;
 };
