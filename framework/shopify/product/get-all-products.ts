@@ -1,3 +1,4 @@
+import { Product } from "./../schema.d";
 /* Example 2 */
 import getAllProductsQuery from "../utils/queries/get-all-products";
 import fetchApi from "../utils/fetch-api";
@@ -58,14 +59,28 @@ type ReturnType = {
 // };
 
 /* Example 2 */
+// const getAllProducts = async (): Promise<any> => {
+//   const { data } = await fetchApi<ReturnType>({
+//     query: getAllProductsQuery,
+//   });
+
+//   //* Normalize and return new data!
+
+//   return data.products;
+// };
+
+/* Example 3 */
 const getAllProducts = async (): Promise<any> => {
   const { data } = await fetchApi<ReturnType>({
     query: getAllProductsQuery,
   });
 
-  //* Normalize and return new data!
+  const products =
+    data.products.edges.map(({ node: product }) => {
+      return product;
+    }) ?? [];
 
-  return data.products;
+  return products;
 };
 
 export default getAllProducts;
