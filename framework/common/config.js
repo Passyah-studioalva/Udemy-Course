@@ -13,9 +13,13 @@ https://www.npmjs.com/package/deepmerge
 const merge = require("deepmerge");
 const fs = require("fs");
 const path = require("path");
+const prettier = require("prettier");
 
 function withFrameworkConfig(defaultConfig = {}) {
-  const framework = "shopify";
+  /* Example 1 */
+  // const framework = "shopify";
+  /* Example 2 */
+  const framework = defaultConfig?.framework.name;
 
   const frameworkNextConfig = require(path.join(
     "../",
@@ -29,7 +33,10 @@ function withFrameworkConfig(defaultConfig = {}) {
   tsConfig.compilerOptions.paths["@framework"] = [`framework/${framework}`];
   tsConfig.compilerOptions.paths["@framework/*"] = [`framework/${framework}/*`];
 
-  fs.writeFileSync(tsPath, JSON.stringify(tsConfig, null, 2));
+  fs.writeFileSync(
+    tsPath,
+    prettier.format(JSON.stringify(tsConfig), { parser: "json" })
+  );
 
   return config;
 }
