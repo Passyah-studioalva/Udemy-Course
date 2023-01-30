@@ -8,7 +8,9 @@ const { withFrameworkConfig } = require("./framework/common/config");
 module.exports = withFrameworkConfig({
   nextConfig,
   framework: {
-    name: "shopify",
+    // name: "doesntexist",
+    name: "shopify_local",
+    // name: "shopify",
     // name: "bigcommerce",
   },
   i18n: {

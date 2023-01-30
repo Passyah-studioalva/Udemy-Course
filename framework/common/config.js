@@ -15,11 +15,31 @@ const fs = require("fs");
 const path = require("path");
 const prettier = require("prettier");
 
+const ALLOWED_FW = ["shopify", "bigcommerce", "shopify_local"];
+const FALLBACK_FW = "shopify"
+
 function withFrameworkConfig(defaultConfig = {}) {
   /* Example 1 */
   // const framework = "shopify";
   /* Example 2 */
-  const framework = defaultConfig?.framework.name;
+  let framework = defaultConfig?.framework?.name;
+
+  if (!framework) {
+    throw new Error(
+      "The API framework is missing, please add a valid provider!"
+    );
+  }
+
+  if (!ALLOWED_FW.includes(framework)) {
+    throw new Error(
+      `The API framework: ${framework}
+       cannot be found, please use one of ${ALLOWED_FW.join(", ")}`
+    );
+  }
+
+  if (framework === "shopify_local") {
+    framework = FALLBACK_FW
+  }
 
   const frameworkNextConfig = require(path.join(
     "../",
