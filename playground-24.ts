@@ -37,10 +37,10 @@ export default function play24() {
   };
 
   function logStudenInfo(info: StudenInfo<PostGraduadeStudent>) {
-    console.log(info.data.name);
-    console.log(info.data.age);
-    console.log(info.data.projects);
+    // console.log(info.data.name);
+    // console.log(info.data.age);
+    // console.log(info.data.projects);
   }
 
-  logStudenInfo(info);
+  // logStudenInfo(info);
 }

@@ -1,13 +1,17 @@
-type FetchParams = {
-  query: string;
-};
+import { ApiFetcherOptions, ApiFetcherResults } from "@common/types/api";
 
-type FetcherResult<T> = { data: T };
+/* Update 1 Febuari 2023 - it is not used in use above */
+// type FetchParams = {
+//   query: string;
+// };
+// type FetcherResult<T> = { data: T };
 
 const fetchApi = async <T>({
+  url,
   query,
-}: FetchParams): Promise<FetcherResult<T>> => {
-  const url = "http://localhost:4000/graphql";
+}: ApiFetcherOptions): Promise<ApiFetcherResults<T>> => {
+  /* Update 1 Febuari 2023 - it is not used in use above */
+  // const url = "http://localhost:4000/graphql";
 
   const res = await fetch(url, {
     method: "POST",
