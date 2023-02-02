@@ -1,9 +1,9 @@
 import { FC } from "react"
 
-const Layout:FC = ({ children }) => {
+const Layout:FC = ({ children }:any) => {
     return (
         <div className="layout">
-            {children}
+            { children }
         </div>
     )
 }

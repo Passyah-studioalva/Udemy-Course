@@ -1,5 +1,9 @@
 import { AppProps } from "next/app";
-import { Layout } from "@components/common";
+
+const Layout = (props: any) => {
+  // 👈️ turns off type checking for props
+  return <div>{props.children}</div>;
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
