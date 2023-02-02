@@ -1,15 +1,12 @@
 import { AppProps } from "next/app";
+import { Layout } from "@components/common";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    /* Example 1 */
-    // <div className="app-component">
-    //   <Component {...pageProps} />
-    // </div>
-
-    /* Example 2 */
     <>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
