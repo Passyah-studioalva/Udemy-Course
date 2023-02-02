@@ -11,16 +11,26 @@
 
 // export default Layout
 
-
 /* Example 2 */
-import { FC } from "react"
+// import { FC } from "react"
 
-const Layout:FC = ({ children }) => {
-    return (
-        <div className="layout">
-            { children }
-        </div>
-    )
+// const Layout:FC = ({ children }) => {
+//     return (
+//         <div className="layout">
+//             { children }
+//         </div>
+//     )
+// }
+
+// export default Layout
+
+/* Example 3 */
+interface LayoutProps {
+  children: React.ReactNode;
 }
 
-export default Layout
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  return <div className="layout">{children}</div>;
+};
+
+export default Layout;
