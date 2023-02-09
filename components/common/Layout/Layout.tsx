@@ -25,12 +25,26 @@
 // export default Layout
 
 /* Example 3 */
-interface LayoutProps {
-  children: React.ReactNode;
-}
+// interface LayoutProps {
+//   children: React.ReactNode;
+// }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <div className="layout">{children}</div>;
-};
+// const Layout: React.FC<LayoutProps> = ({ children }) => {
+//   return <div className="layout">{children}</div>;
+// };
+/* Example 4 from creator philip */
+import { FunctionComponent, ReactNode } from "react"
+ 
+type Props = {
+  children: ReactNode | ReactNode[]
+}
+ 
+const Layout: FunctionComponent<Props> = ({children}) => {
+  return (
+    <div className="layout">
+      { children }
+    </div>
+  )
+}
 
 export default Layout;
