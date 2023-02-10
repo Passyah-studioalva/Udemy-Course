@@ -35,16 +35,26 @@
 // export default MyApp;
 
 /* Example 3 */
-import "@assets/main.css"
+import "@assets/main.css";
 import { AppProps } from "next/app";
-import { FC } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
-const Noop: FC = ({ children }) => <>{children}</>;
+type Props = {
+  children: ReactNode | ReactNode[];
+};
+
+const Noop: FunctionComponent<Props> = ({ children }) => {
+  return (
+    <>
+      {children}
+    </>
+  ) 
+};
 
 function MyApp({
   Component,
   pageProps,
-}: AppProps & { Component: { Layout: FC } }) {
+}: AppProps & { Component: { Layout: any } }) {
   const Layout = Component.Layout ?? Noop;
 
   return (
