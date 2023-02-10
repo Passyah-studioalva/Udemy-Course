@@ -33,18 +33,21 @@
 //   return <div className="layout">{children}</div>;
 // };
 /* Example 4 from creator philip */
-import { FunctionComponent, ReactNode } from "react"
- 
+import { FunctionComponent, ReactNode } from "react";
+import style from "./Layout.module.css"
+
 type Props = {
-  children: ReactNode | ReactNode[]
-}
- 
-const Layout: FunctionComponent<Props> = ({children}) => {
+  children: ReactNode | ReactNode[];
+};
+
+const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
-    <div className="layout">
-      { children }
-    </div>
-  )
-}
+    <>
+      <main className={ style.root }>
+        {children}
+      </main>
+    </>
+  );
+};
 
 export default Layout;
