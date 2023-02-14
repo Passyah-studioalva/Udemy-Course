@@ -34,7 +34,7 @@
 // };
 /* Example 4 from creator philip */
 import { FunctionComponent, ReactNode } from "react";
-import style from "./Layout.module.css"
+import style from "./Layout.module.css";
 
 type Props = {
   children: ReactNode | ReactNode[];
@@ -42,8 +42,10 @@ type Props = {
 
 const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
-    <div className={ style.root }>
-      <main className="fit">
+    <div className={style.root}>
+      <main
+        style={{ color: "var(--primary)" }}
+        className="fit">
         {children}
       </main>
     </div>
