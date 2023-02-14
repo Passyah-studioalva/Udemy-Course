@@ -42,11 +42,11 @@ type Props = {
 
 const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
-    <>
-      <main className={ style.root }>
+    <div className={ style.root }>
+      <main className="fit">
         {children}
       </main>
-    </>
+    </div>
   );
 };
 
