@@ -44,7 +44,6 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
     <div className={style.root}>
       <main
-        style={{ color: "var(--primary)" }}
         className="fit">
         {children}
       </main>
