@@ -1,5 +1,5 @@
 .root {
-  @apply bg-accents-2 h-full mx-auto max-w-[2460px];
+  @apply bg-primary h-full mx-auto;
   /* background-color: var(--green); */
   /* background-color: theme('colors.green'); */
   color: theme('textColor.base');
